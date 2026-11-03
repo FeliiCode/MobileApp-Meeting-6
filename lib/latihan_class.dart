@@ -1,18 +1,27 @@
 import 'package:flutter/material.dart';
 
-// 1. Entry point aplikasi
 void main() {
-  runApp(const MyApp());
+  runApp(const MyListView());
 }
 
-// 2. Root widget aplikasi
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MyListView extends StatelessWidget {
+  const MyListView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: MyListView(),
+    return MaterialApp(
+      home: Scaffold(
+        body: ListView.builder(
+          itemCount: 10,
+          itemBuilder: (context, index) {
+            return ListTile(
+              leading: Icon(Icons.mail_outline),
+              title: Text("Email"),
+              subtitle: Text("vivianmargaret0609192"),
+            );
+          },
+        ),
+      ),
     );
   }
 }
