@@ -1,19 +1,18 @@
-// ignore_for_file :avoid_print
+import 'package:flutter/material.dart';
 
-class kucing {
-  kucing(this.name);
-  final String name;
+// 1. Entry point aplikasi
+void main() {
+  runApp(const MyApp());
 }
 
-void makan(){
-  print('$name sedang makan');
-}
-void main (){
-  final kucing1 = kucing('kucing oren');
-  final kucing2 = kucing('kucing Hitam');
-  final kucing3 = kucing('kucing Putih');
-  print(kucing1.name);
-  print(kucing2.name);
-  print(kucing3.name);
-  
+// 2. Root widget aplikasi
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      home: MyListView(),
+    );
+  }
 }
